@@ -1,0 +1,4 @@
+rdoc/*
+pkg/*
+/Gemfile.lock
+/.rbenv-version

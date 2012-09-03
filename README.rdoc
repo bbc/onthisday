@@ -1,0 +1,27 @@
+= On This Day
+
+A simple ruby parser for Wikipedia's "On this day" box on the
+(english-language) homepage.
+
+== Usage
+
+Install the gem
+
+   gem install onthisday
+
+Then fetch the current news items
+
+   @onthisday = OnThisDay::Parser.new
+   items = @onthisday.items
+
+Items have text
+
+   items.first.text #=> "French Revolution: Meeting on a tennis court near the Palace of Versailles, members of France's Third Estate took the Tennis Court Oath, pledging not to separate until a new constitution was established."
+
+A year
+
+   items.first.year #=> 1789
+
+And associated topics (other related wikipedia pages)
+
+   items.first.topics #=> ['French_Revolution', 'Palace_of_Versailles', 'Estates_of_the_realm', 'Tennis_Court_Oath', 'Constitution']
