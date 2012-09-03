@@ -30,7 +30,7 @@ module OnThisDay
 
         # if the title of the link looks like a year, e.g. "1879", set
         # the year of this item and remove the node
-        if title.match /\A\d{4,4}\z/
+        if title.match /\A\d{3,4}\z/
           @year = title
           node.remove
         end

@@ -40,4 +40,15 @@ class TestOnThisDay < MiniTest::Unit::TestCase
       assert item.topics.include? topic
     end
   end
+
+  def test_three_digit_year_parsed_correctly
+    fn = File.expand_path(File.join(File.dirname(__FILE__), 'fixtures', 'main_page_20120903.html'))
+    fixture = File.open(fn, "rb").read
+
+    on_this_day = OnThisDay::Parser.new
+    stub_request(:get, "en.wikipedia.org/wiki/Main_Page").
+      to_return({:body => fixture})
+
+    assert_equal 590, on_this_day.items[0].year
+  end
 end
