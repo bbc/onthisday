@@ -2,17 +2,17 @@
 
 Gem::Specification.new do |s|
   s.name = "onthisday"
-  s.version = "0.1.4"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Lowis"]
-  s.date = "2012-06-20"
+  s.date = "2012-09-13"
   s.email = "chris.lowis@gmail.com"
-  s.files = ["Gemfile", "README.rdoc", "test/fixtures", "test/fixtures/main_page_20120620.html", "test/onthisday_test.rb", "lib/onthisday.rb"]
+  s.files = ["Gemfile", "README.rdoc", "test/fixtures/main_page_20120620.html", "test/fixtures/main_page_20120903.html", "test/onthisday_test.rb", "lib/onthisday.rb"]
   s.homepage = "http://github.com/bbcrd/onthisday"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
-  s.summary = "A little parser for Wikipedia's 'In the News' content"
+  s.rubygems_version = "1.8.23"
+  s.summary = "A little parser for Wikipedia's 'On This Day' content block"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
