@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["Chris Lowis"]
   s.date = "2012-09-13"
   s.email = "chris.lowis@gmail.com"
-  s.files = ["Gemfile", "README.rdoc", "test/fixtures/main_page_20120620.html", "test/fixtures/main_page_20120903.html", "test/onthisday_test.rb", "lib/onthisday.rb"]
+  s.files = ["Gemfile", "README.rdoc", "test/fixtures", "test/fixtures/main_page_20120620.html", "test/fixtures/main_page_20120903.html", "test/fixtures/main_page_20120913.html", "test/onthisday_test.rb", "lib/onthisday.rb"]
   s.homepage = "http://github.com/bbcrd/onthisday"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.23"
