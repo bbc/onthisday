@@ -21,17 +21,17 @@ module OnThisDay
     end
 
     def year
-      @year.to_i
+      @year
     end
 
     def set_and_remove_year!
       @element.xpath('./a').each do |node|
-        title = node['title']
+        text = node.content
 
         # if the title of the link looks like a year, e.g. "1879", set
         # the year of this item and remove the node
-        if title.match /\A\d{3,4}\z/
-          @year = title
+        text.match /\A\d{2,4}( BC)?\z/ do |m|
+          @year = m.to_s
           node.remove
         end
       end

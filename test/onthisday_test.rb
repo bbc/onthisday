@@ -30,7 +30,7 @@ class TestOnThisDay < MiniTest::Unit::TestCase
   end
 
   def test_returns_year_of_item
-    assert_equal 1789, @on_this_day.items[0].year
+    assert_equal "1789", @on_this_day.items[0].year
   end
 
   def test_returns_topics_contained_in_news_headline
@@ -49,6 +49,17 @@ class TestOnThisDay < MiniTest::Unit::TestCase
     stub_request(:get, "en.wikipedia.org/wiki/Main_Page").
       to_return({:body => fixture})
 
-    assert_equal 590, on_this_day.items[0].year
+    assert_equal "590", on_this_day.items[0].year
+  end
+
+  def test_bc_date_parsed_correctly
+    fn = File.expand_path(File.join(File.dirname(__FILE__), 'fixtures', 'main_page_20120913.html'))
+    fixture = File.open(fn, "rb").read
+
+    on_this_day = OnThisDay::Parser.new
+    stub_request(:get, "en.wikipedia.org/wiki/Main_Page").
+      to_return({:body => fixture})
+
+    assert_equal "509 BC", on_this_day.items[0].year
   end
 end
